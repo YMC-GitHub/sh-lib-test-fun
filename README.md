@@ -19,7 +19,20 @@ a function `test` to test shell code for ymc
 # or import to your sh file
 # source /path/to/the/index file
 
-s
+# simple usage
+function hi() {
+  echo "hello $1"
+}
+
+f="hi"
+a="ymc"
+e="hello $a"
+test "$f $a" "$e"
+
+:<<output
+test:hi ymc
+it is ok
+output
 
 ```
 
